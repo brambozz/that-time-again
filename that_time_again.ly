@@ -28,9 +28,11 @@ theNotes = \relative {
 
 theChords = \chords {
 	\time 3/4
-	c2.:maj7 | e:m7 | a:m7 | g |
-	f | e | d | g1. f |
-	c
+	c2.:6 | c:6/e | a:m7 | g:m7 | f | e:m7 | d:m7 | g4. f |
+	c2.:6 | c:6/e | a:m7 | g:m7 | f | e:m7 | d:m7 | g4. f |
+	a2.:m7 | d:7 | g:maj7 | c:maj7 | fis:m7.5- | b:7 | e:maj7 | e:maj7 |
+	d | g | c | c4 d e | f2. | e | f | e | f | d | g4 a b |
+	
 }
 
 \score {
