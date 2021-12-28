@@ -2,9 +2,11 @@
 \include "jazzchords.ily"
 \include "lilyjazz.ily"
 \include "jazzextras.ily"
+\include "swing.ly"
 
 theNotes = \relative {
 	\time 3/4
+	\tempo 4=160
 	g'2.      | g        | c,~          | c4 e c  |
 	a b c8 g~ | g c8~ c2 | c4 d8 e r d~ | d4 d' b | \break
 
@@ -26,7 +28,7 @@ theNotes = \relative {
         f,4 b8 c r g~ | g d'~ d b~ b c~ | c2. | r | 
 }
 
-theChords = \chords {
+theChords = \chords \with {midiInstrument = "string ensemble 1"}  {
 	\time 3/4
 	c2. | e:m7 | a:m7 | g:m7 | f | e:m7 | d:m7 | f4.:/g f | % laatste maat onzeker
 	e2.:m9 | a:m7 | g:m7   | c:7    | f         | e:m7 | d4.:m7 g:7| c4. e:m7 |
@@ -39,8 +41,12 @@ theChords = \chords {
 }
 
 \score {
+\tripletFeel 8 {
 <<
 	\theChords
-	\new Staff \theNotes
+	\new Staff \with {midiInstrument = "trombone"} \theNotes
 >>
+}
+\layout { }
+\midi { }
 }
